@@ -86,7 +86,7 @@ void	exec(t_args *t, char **env)
 	process(t, fd, env);
 	if (t->in)
 		close (t->in);
-	while (wait(NULL) != -1);
+	while (waitpid(0, NULL, 0) != -1);
 }
 
 t_args	*init_args()
